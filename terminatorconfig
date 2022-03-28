@@ -1,0 +1,67 @@
+[global_config]
+  borderless = True
+  title_transmit_fg_color = "#09141b"
+  title_transmit_bg_color = "#d15123"
+  suppress_multiple_term_dialog = True
+  always_split_with_profile = True
+[keybindings]
+  go_up = <Primary><Shift>Up
+  go_down = <Primary><Shift>Down
+  go_left = <Primary><Shift>Left
+  go_right = <Primary><Shift>Right
+  split_horiz = <Primary>parenright
+  split_vert = <Primary>parenleft
+  resize_up = <Alt>Up
+  resize_down = <Alt>Down
+  resize_left = <Alt>Left
+  resize_right = <Alt>Right
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_10 = <Alt>6
+[profiles]
+  [[default]]
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+  [[SeaShells]]
+    background_color = "#09141b"
+    cursor_shape = ibeam
+    cursor_color = "#fca02f"
+    cursor_color_fg = "#1e4962"
+    font = Hack Nerd Font Mono 10
+    foreground_color = "#deb88d"
+    palette = "#17384c:#d15123:#027c9b:#fca02f:#1e4950:#68d4f1:#50a3b5:#deb88d:#434b53:#d48678:#628d98:#fdd39f:#1bbcdd:#bbe3ee:#87acb4:#fee4ce"
+    use_system_font = False
+    bold_is_bright = True
+  [[Laser]]
+    background_color = "#030d18"
+    cursor_shape = ibeam
+    cursor_color = "#00ff9c"
+    cursor_color_fg = "#2e206a"
+    font = Hack Nerd Font Mono 10
+    foreground_color = "#f106e3"
+    palette = "#626262:#ff8373:#b4fb73:#09b4bd:#fed300:#ff90fe:#d1d1fe:#f1f1f1:#8f8f8f:#ffc4be:#d6fcba:#fffed5:#f92883:#ffb2fe:#e6e7fe:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+  [[ForestBlue]]
+    background_color = "#051519"
+    cursor_shape = ibeam
+    cursor_color = "#9e9ecb"
+    cursor_color_fg = "#4d4d4d"
+    font = Hack Nerd Font Mono 10
+    foreground_color = "#e2d8cd"
+    palette = "#333333:#f8818e:#92d3a2:#1a8e63:#8ed0ce:#5e468c:#31658c:#ffffff:#8f8f8f:#3d3d3d:#fb3d66:#6bb48d:#30c85a:#39a7a2:#7e62b3:#6096bf"
+    use_system_font = False
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = SeaShells
+[plugins]
