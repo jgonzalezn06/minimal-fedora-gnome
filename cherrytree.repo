@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:bcotton:cherrytree]
+name=Copr repo for cherrytree owned by bcotton
+baseurl=https://download.copr.fedorainfracloud.org/results/bcotton/cherrytree/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/bcotton/cherrytree/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
