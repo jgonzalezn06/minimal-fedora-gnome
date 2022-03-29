@@ -11,7 +11,7 @@ dnf clean all && dnf -y update
 mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
 mv *.zip /usr/share/fonts/
 # Instalacion de aplicativos para trabajo
-dnf install -y virt-viewer fping git openfortivpn squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim
+dnf install -y virt-viewer fping git openfortivpn squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync
 
 # solo para intel
 # dnf group install -y "Hardware Support"
