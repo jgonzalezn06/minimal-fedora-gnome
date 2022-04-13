@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Repositorios de fedora workstation y mas
+# dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 mv *.repo /etc/yum.repos.d
-dnf install -y fedora-workstation-repositories
+dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 dnf clean all && dnf -y update
 
 # Font Install RobotoMono y HacknerdFont
@@ -11,37 +12,17 @@ dnf clean all && dnf -y update
 mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
 mv *.zip /usr/share/fonts/
 # Instalacion de aplicativos para trabajo
-dnf install -y virt-viewer fping git openfortivpn squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla
+dnf install -y virt-viewer fping git openfortivpn squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks @development-tools dnf install vlc python-vlc
+systemctl set-default graphical.target
 
 # solo para intel
 # dnf group install -y "Hardware Support"
 
 # gnome minimal
-dnf install -y @base-x gnome-shell gdm
-systemctl set-default graphical.target
 
-# drivers
-dnf install -y vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader
-
-# Opciones de nautilus "abrir terminal"
-# dnf install -y gnome-terminal-nautilus xdg-user-dirs xdg-user-dirs-gtk ffmpegthumbnailer
-
-# Instalacion de gnome-tweaks y opciones de gnome en chrome
-dnf install -y chrome-gnome-shell gnome-tweaks @development-tools
-
-# calculadora monitor gedit pdf y file-roller
-dnf install -y gnome-calculator gnome-system-monitor gedit evince file-roller 
-
-# VLC
-dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install -y vlc python-vlc
 
 # VIRTUALBOX
-sudo dnf install kernel-headers kernel-devel gcc glibc-headers
-sudo dnf install -y @development-tools && sudo dnf -y install kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
-dnf install -y VirtualBox-6.1
-
+sudo dnf install -y kernel-headers kernel-devel gcc glibc-headers @development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox-6.1
 usermod -aG vboxusers,wheel jgonzalez && newgrp vboxusers
 
 
