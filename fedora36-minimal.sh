@@ -10,19 +10,15 @@ dnf clean all && dnf -y update
 # Font Install RobotoMono y HacknerdFont
 
 mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
-mv *.zip /usr/share/fonts/
+unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip
+unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
+
 # Instalacion de aplicativos para trabajo
-dnf install -y virt-viewer fping git openfortivpn squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks @development-tools dnf install vlc python-vlc
+dnf install -y virt-viewer fping git openfortivpn curl squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks @development-tools dnf install vlc python-vlc
 systemctl set-default graphical.target
 
-# solo para intel
-# dnf group install -y "Hardware Support"
 
-# gnome minimal
-
-
-# VIRTUALBOX
-sudo dnf install -y kernel-headers kernel-devel gcc glibc-headers @development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox-6.1
+# VIRTUALBOX PERMISOS
 usermod -aG vboxusers,wheel jgonzalez && newgrp vboxusers
 
 
@@ -65,11 +61,8 @@ ln -s /root/.zshrc /home/jgonzalez/.zshrc
 chown root: /root
 chown jgonzalez: /home/jgonzalez
 
-
-
-# Cherrytree
-
-sudo dnf install 
+# solo para intel
+# dnf group install -y "Hardware Support"
 
 
 reboot
