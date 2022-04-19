@@ -14,7 +14,7 @@ unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip
 unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
 
 # Instalacion de aplicativos para trabajo
-dnf install -y virt-viewer fping git openfortivpn curl squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks @development-tools dnf install vlc python-vlc
+dnf install -y virt-viewer fping git openfortivpn curl squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks gnome-extension @development-tools dnf install vlc python-vlc
 systemctl set-default graphical.target
 
 
