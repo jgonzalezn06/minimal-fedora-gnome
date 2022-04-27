@@ -13,8 +13,14 @@ mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
 unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip
 unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
 
-# Instalacion de aplicativos para trabajo
-dnf install -y virt-viewer fping git openfortivpn curl squid chromium firefox evince wget pgadmin3 cherrytree nautilus neovim rsync filezilla telnet gedit htop gnome-calculator evince file-roller @base-x gnome-shell gdm vulkan mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader chrome-gnome-shell gnome-tweaks gnome-extension-app @development-tools dnf install vlc python-vlc
+#PACKAGES GROUPS AND INSTALL
+WORK_CONSOLE='fping git openfortivpn curl squid wget neovim rsync telnet htop zsh'
+WORK_PROGRAM='filezilla pgadmin3 cherrytree chromium firefox virt-viewer vlc python-vlc terminator'
+AMD_DRIVER='mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader'
+GNOME='evince gedit nautilus file-roller gnome-calculator @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extension-app gdm'
+VBOX='@development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox-6.1'
+
+dnf install -y "$WORK_CONSOLE $WORK_PROGRAM $AMD_DRIVER $GNOME $VBOX"
 systemctl set-default graphical.target
 
 
@@ -23,7 +29,6 @@ usermod -aG vboxusers,wheel jgonzalez && newgrp vboxusers
 
 
 # ZSH y POWERLEVEL10K y Terminal
-dnf install -y zsh terminator
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestio
