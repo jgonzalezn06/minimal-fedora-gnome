@@ -1,7 +1,13 @@
 #!/bin/bash
 
+#Clean Packages
+REMOVE="vim-minimal vim-data yum"
+dnf remove -y $REMOVE
+
 # Repositorios de fedora workstation y mas
 # dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+
 
 mv *.repo /etc/yum.repos.d
 dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
