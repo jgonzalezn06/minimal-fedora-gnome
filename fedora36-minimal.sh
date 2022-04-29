@@ -22,7 +22,7 @@ AMD_DRIVER='mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm 
 GNOME='evince gedit nautilus file-roller gnome-calculator @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extension-app gdm'
 VBOX='@development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox-6.1'
 
-dnf install -y ${WORK_CONSOLE} ${WORK_PROGRAM} ${AMD_DRIVER} ${GNOME} ${VBOX}
+dnf install -y $WORK_CONSOLE $WORK_PROGRAM $AMD_DRIVER $GNOME $VBOX
 systemctl set-default graphical.target
 
 # VIRTUALBOX PERMISOS
