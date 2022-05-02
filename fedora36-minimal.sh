@@ -60,20 +60,20 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 EOF
 
-mkdir -p ~/.config/terminator/
-cat > ~/.config/terminator/config << EOF
+#mkdir -p ~/.config/terminator/
+#cat > ~/.config/terminator/config << EOF
 
-EOF
+#EOF
 # CREACION de usuario
 
-usermod root -s /usr/bin/zsh
-usermod jgonzalez -s /usr/bin/zsh
-ln -s /root/.zshrc /home/jgonzalez/.zshrc
-chown root: /root
-chown jgonzalez: /home/jgonzalez
+#usermod root -s /usr/bin/zsh
+#usermod jgonzalez -s /usr/bin/zsh
+#ln -s /root/.zshrc /home/jgonzalez/.zshrc
+#chown root: /root
+#chown jgonzalez: /home/jgonzalez
 
 # solo para intel
 # dnf group install -y "Hardware Support"
 
 
-reboot
+#reboot
