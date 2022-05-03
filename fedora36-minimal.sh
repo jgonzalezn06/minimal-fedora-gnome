@@ -15,7 +15,7 @@ dnf makecache && dnf clean all
 WORK_CONSOLE='fping git openfortivpn curl squid wget neovim rsync telnet htop zsh unzip'
 WORK_PROGRAM='filezilla pgadmin3 cherrytree-future chromium firefox virt-viewer vlc python-vlc terminator libreoffice-writer libreoffice-calc'
 AMD_DRIVER='mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader'
-GNOME='evince gedit nautilus file-roller gnome-calculator @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extensions-app gdm'
+GNOME='evince gedit nautilus file-roller gnome-calculator eog @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extensions-app gdm'
 VBOX='@development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox'
 
 dnf install -y $(echo $WORK_CONSOLE $WORK_PROGRAM $AMD_DRIVER $GNOME $VBOX)
