@@ -3,9 +3,10 @@ gedit
 nautilus
 file-roller
 gnome-calculator
+eog
 @base-x
 gnome-shell
 chrome-gnome-shell
 gnome-tweaks
-gnome-extension-app
+gnome-extensions-app
 gdm
