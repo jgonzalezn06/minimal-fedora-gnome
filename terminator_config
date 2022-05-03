@@ -1,7 +1,6 @@
 [global_config]
-  borderless = True
   title_transmit_fg_color = "#09141b"
-  title_transmit_bg_color = "#d15123"
+  title_transmit_bg_color = "#ffff00"
   suppress_multiple_term_dialog = True
   always_split_with_profile = True
 [keybindings]
@@ -55,6 +54,27 @@
     palette = "#333333:#f8818e:#92d3a2:#1a8e63:#8ed0ce:#5e468c:#31658c:#ffffff:#8f8f8f:#3d3d3d:#fb3d66:#6bb48d:#30c85a:#39a7a2:#7e62b3:#6096bf"
     use_system_font = False
     bold_is_bright = True
+  [[Sayayin]]
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_shape = ibeam
+    cursor_color = "#ffffff"
+    cursor_color_fg = "#b5d5ff"
+    font = RobotoMono Nerd Font 10.2
+    foreground_color = "#ffffff"
+    palette = "#878787:#ff6600:#ccff04:#ffcc00:#44b4cc:#9933cc:#44b4cc:#f5f5f5:#555555:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#e5e5e5"
+    use_system_font = False
+    bold_is_bright = True
+  [[Neopolitan]]
+    background_color = "#271f19"
+    background_darkness = 0.98
+    cursor_shape = ibeam
+    cursor_color = "#ffffff"
+    font = RobotoMono Nerd Font 10.2
+    foreground_color = "#ffffff"
+    palette = "#000000:#800000:#61ce3c:#fbde2d:#253b76:#ff0080:#8da6ce:#f8f8f8:#000000:#800000:#61ce3c:#fbde2d:#253b76:#ff0080:#8da6ce:#f8f8f8"
+    use_system_font = False
+    bold_is_bright = True
 [layouts]
   [[default]]
     [[[window0]]]
@@ -63,5 +83,5 @@
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = SeaShells
+      profile = Sayayin
 [plugins]
