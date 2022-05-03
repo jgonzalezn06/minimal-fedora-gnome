@@ -18,7 +18,7 @@ dnf makecache && dnf clean all
 #GNOME='evince gedit nautilus file-roller gnome-calculator @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extension-app gdm'
 #VBOX='@development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox-6.1'
 
-dnf install -y $(cat console_software software gnome amd_driver vbox)
+dnf install -y $(cat software)
 systemctl set-default graphical.target
 
 # Font Install RobotoMono y HacknerdFont
