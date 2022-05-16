@@ -1,35 +1,36 @@
 #!/bin/bash
+# Este script instala un entorno de escritorio GNOME minimo para fedora 36 server 
 
-#Clean Packages
+
+# Conectividad hacia internet
+PING=$(ping -c1 www.google.cl)
+
+if [ $PING -eq 0 ] ; then
+  echo "Si existe conectividad hacia internet"
+  else
+  echo "no existe conectividad hacia internet, Saliendo del script"
+  exit 1
+fi
+
+# Clean Packages y repositorios
 REMOVE="vim-minimal vim-data yum nano"
 dnf remove -y ${REMOVE}
-
-# Repositorios de fedora workstation y mas
-# dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 mv *.repo /etc/yum.repos.d
-dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-dnf makecache && dnf clean all
+dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && dnf clean all && dnf makecache
 
 #PACKAGES GROUPS AND INSTALL
-WORK_CONSOLE='fping git openfortivpn curl squid wget neovim rsync telnet htop zsh unzip'
-WORK_PROGRAM='filezilla pgadmin3 cherrytree-future chromium firefox virt-viewer vlc python-vlc terminator libreoffice-writer libreoffice-calc'
-AMD_DRIVER='mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-libxatracker mesa-vulkan-drivers vulkan-loader'
-GNOME='evince gedit nautilus file-roller gnome-calculator eog @base-x gnome-shell chrome-gnome-shell gnome-tweaks gnome-extensions-app gdm'
-VBOX='@development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras VirtualBox'
 
-dnf install -y $(echo $WORK_CONSOLE $WORK_PROGRAM $AMD_DRIVER $GNOME $VBOX)
+dnf install -y $(cat *fedora.txt)
 systemctl set-default graphical.target
 
 # Font Install RobotoMono y HacknerdFont
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
-unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip
-unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
+unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip && unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
 
 #USER
 read -p 'Ingresa nombre de usuario ' USERNAME
 useradd $USERNAME -s -m /usr/bin/zsh
-passwd $USERNAME
 usermod root -s /usr/bin/zsh
 ln -s /root/.zshrc /home/$USERNAME/.zshrc
 
@@ -49,4 +50,4 @@ mv terminator_config /home/"$USERNAME"/.config/terminator/
 # solo para intel
 # dnf group install -y "Hardware Support"
 
-reboot
+passwd $USERNAME
