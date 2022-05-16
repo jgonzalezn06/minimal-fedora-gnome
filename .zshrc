@@ -8,8 +8,8 @@ fi
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
@@ -28,7 +28,7 @@ bindkey "\e[3~" delete-char
 # bindkey "^[[1;3C" forward-word
 # bindkey "^[[1;3D" backward-word
 
-# Forward and Backward - word CTRL	
+# Forward and Backward - word CTRL      
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
@@ -36,4 +36,4 @@ bindkey "^[[1;5D" backward-word
 alias ssh='ssh -R 3128:localhost:3128'
 alias yum='dnf'
 alias vi='nvim'
-alias vim='nvim
+alias vim='nvim'
