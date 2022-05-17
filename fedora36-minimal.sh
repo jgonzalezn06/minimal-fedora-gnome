@@ -1,11 +1,10 @@
 #!/bin/bash
+
 # Este script instala un entorno de escritorio GNOME minimo para fedora 36 server 
 
-
 # Conectividad hacia internet
-PING=$(ping -c1 www.google.cl)
-
-if [ $PING -eq 0 ] ; then
+ping -c1 www.google.cl >> /dev/null
+if [ $(echo $?) -eq 0 ] ; then
   echo "Si existe conectividad hacia internet"
   else
   echo "no existe conectividad hacia internet, Saliendo del script"
@@ -20,7 +19,7 @@ dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/f
 
 #PACKAGES GROUPS AND INSTALL
 
-dnf install -y $(cat *fedora.txt)
+dnf install -y $(cat packages/*_fedora)
 systemctl set-default graphical.target
 
 # Font Install RobotoMono y HacknerdFont
