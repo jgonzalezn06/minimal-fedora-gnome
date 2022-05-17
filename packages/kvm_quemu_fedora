@@ -1,0 +1,8 @@
+bridge-utils
+libvirt
+virt-install
+qemu-kvm
+libvirt-devel
+virt-top
+libguestfs-tools
+guestfs-tools
