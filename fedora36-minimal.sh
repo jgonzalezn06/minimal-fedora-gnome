@@ -10,9 +10,10 @@ if [ $(echo $?) -eq 0 ] ; then
   echo "no existe conectividad hacia internet, Saliendo del script"
   exit 1
 fi
+# PENDIENTE GENERAR FUNCION PARA COMRPOBAR DIRECTORIOS Y FICHEROS
 
 # Clean Packages y repositorios
-REMOVE="vim-minimal vim-data yum nano"
+REMOVE="vim-minimal vim-data nano yum"
 dnf remove -y ${REMOVE}
 mv *.repo /etc/yum.repos.d
 dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && dnf clean all && dnf makecache
@@ -28,25 +29,19 @@ mkdir /usr/share/fonts/RobotoMono /usr/share/fonts/HackNerdFont
 unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip && unzip Hack.zip -d /usr/share/fonts/HackNerdFont && rm -rf Hack.zip
 
 #USER
-read -p 'Ingresa nombre de usuario ' USERNAME
-useradd $USERNAME -s -m /usr/bin/zsh
-usermod root -s /usr/bin/zsh
-ln -s /root/.zshrc /home/$USERNAME/.zshrc
+read -p "ingresa el nombre de usuario: " USERNAME
+if [ $USERNAME -eq $(ls /home | grep "$USERNAME") ] ; then
+   echo "si existe el usuario"
+   usermod $USERNAME -s /usr/bin/zsh
+   usermod root -s /usr/bin/zsh
+   git clone https://github.com/zsh-users/zsh-autosuggestions /home/"$USERNAME"/.zsh/zsh-autosuggestions
+   # CONFIG MOVE
+   mkdir -p /home/"$USERNAME"/.config/terminator/
+   mv config/terminator.conf /home/"$USERNAME"/.config/terminator/config
+   mv /config/zshrc /home/"$USERNAME"/.zshrc
+   ln -s /home/$USERNAME/.zshrc /root/.zshrc
+   chown -R "$USERNAME": /home/"$USERNAME"
+fi
+   
+   
 
-
-# VIRTUALBOX PERMISOS
-#usermod -aG vboxusers,wheel $USERNAME && newgrp vboxusers
-
-# TERMINATOR CONFIG
-mkdir -p /home/"$USERNAME"/.config/terminator/
-mv terminator_config /home/"$USERNAME"/.config/terminator/
-
-# CREACION de usuario
-# chown root: /root
-# chown jgonzalez: /home/jgonzalez
-
-
-# solo para intel
-# dnf group install -y "Hardware Support"
-
-passwd $USERNAME
