@@ -1,0 +1,40 @@
+## KEYBINDS GNOME ##
+
+Personalizados
+  terminator - ctrl + super + t
+  firefox - ctrl + super + f
+  cherrytree - ctrl + super + c
+  chromium - ctrl + super + g
+  vmmanager - ctrl + super + f
+Lanzadores
+  home - ctrl + super h
+  desactivar todo
+Navegacion
+  cambiar al area de trabajo (1-4) - ctrl +(f1-f4) 
+  mover la ventana al area de trabajo (1-4) - ctrl + shift (f1-f4)
+  mover la ventana a una pantalla a la derecha - shift + super + derecha
+  mover la ventana a una pantalla a la izquierda - shift + super + izquierda
+
+Sistema
+  bloquear pantalla - super + L
+
+
+## EXTENSIONES ##
+dash to dock
+  inferior
+  tamaño 32
+  quitar papelera
+  quitar dispositivos montados
+  accion al pulsar (minimizar)
+  opacidad fija 95%
+disable workspace switch animation for gnome 40
+
+## RETOQUES ##
+  barras de titulo togle maximize
+  barras de titulo maximizar y minimizar a la derecha
+  numero de areas de trabajo 4 y estaticas
+  
+  
+
+
+   
