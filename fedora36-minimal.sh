@@ -37,8 +37,8 @@ if [ $USERNAME -eq $(ls /home | grep "$USERNAME") ] ; then
    git clone https://github.com/zsh-users/zsh-autosuggestions /home/"$USERNAME"/.zsh/zsh-autosuggestions
    # CONFIG MOVE
    mkdir -p /home/"$USERNAME"/.config/terminator/
-   mv config/terminator.conf /home/"$USERNAME"/.config/terminator/config
-   mv /config/zshrc /home/"$USERNAME"/.zshrc
+   mv config/terminator.config /home/"$USERNAME"/.config/terminator/config
+   mv config/zshrc /home/"$USERNAME"/.zshrc
    ln -s /home/$USERNAME/.zshrc /root/.zshrc
    chown -R "$USERNAME": /home/"$USERNAME"
 fi
