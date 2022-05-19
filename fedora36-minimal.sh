@@ -22,6 +22,8 @@ dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/f
 
 dnf install -y $(cat packages/*_fedora)
 systemctl set-default graphical.target
+systemctl enable crond
+systemctl enable libvirtd
 
 # Font Install RobotoMono y HacknerdFont
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
