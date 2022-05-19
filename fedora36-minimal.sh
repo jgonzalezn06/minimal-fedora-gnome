@@ -42,6 +42,7 @@ if [ $USERNAME -eq $(ls /home | grep "$USERNAME") ] ; then
    ln -s /home/$USERNAME/.zshrc /root/.zshrc
    ln -s /home/$USERNAME/.zsh /root/.zsh
    chown -R "$USERNAME": /home/"$USERNAME"
+   usermod -aG wheel $USERNAME
 fi
    
    
