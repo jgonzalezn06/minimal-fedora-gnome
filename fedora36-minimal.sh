@@ -38,8 +38,9 @@ if [ $USERNAME -eq $(ls /home | grep "$USERNAME") ] ; then
    # CONFIG MOVE
    mkdir -p /home/"$USERNAME"/.config/terminator/
    mv config/terminator.config /home/"$USERNAME"/.config/terminator/config
-   mv config/zshrc /home/"$USERNAME"/.zshrc
+   mv config/.zshrc /home/"$USERNAME"/.zshrc
    ln -s /home/$USERNAME/.zshrc /root/.zshrc
+   ln -s /home/$USERNAME/.zsh /root/.zsh
    chown -R "$USERNAME": /home/"$USERNAME"
 fi
    
