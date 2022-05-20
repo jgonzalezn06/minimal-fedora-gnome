@@ -32,7 +32,13 @@ disable workspace switch animation for gnome 40
 ## RETOQUES ##
   barras de titulo togle maximize
   barras de titulo maximizar y minimizar a la derecha
-  numero de areas de trabajo 4 y estaticas
+  
+  
+## CONFIGURACION ##
+  multitarea
+    areas de trabajo solo en una pantalla (principal)
+    numero de areas de trabajo 4 y estaticas
+
   
   
 
