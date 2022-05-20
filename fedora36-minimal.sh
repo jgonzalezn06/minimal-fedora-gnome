@@ -13,7 +13,7 @@ fi
 # PENDIENTE GENERAR FUNCION PARA COMRPOBAR DIRECTORIOS Y FICHEROS
 
 # Clean Packages y repositorios
-REMOVE="vim-minimal vim-data nano yum"
+REMOVE="nano yum"
 dnf remove -y ${REMOVE}
 mv *.repo /etc/yum.repos.d
 dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && dnf clean all && dnf makecache
