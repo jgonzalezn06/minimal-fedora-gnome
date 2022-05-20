@@ -1,3 +1,10 @@
+# PROMPT
+if [ $USER != root ] ; then
+	PROMPT='[%n@%m %~]% $ '
+else
+	PROMPT='%B%F{red}[%n@%m %~]% #%f%b '
+fi
+
 # AUTO SUGGESTIONS
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
