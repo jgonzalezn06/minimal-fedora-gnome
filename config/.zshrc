@@ -1,9 +1,11 @@
 # PROMPT
 if [ $USER != root ] ; then
-	PROMPT='[%n@%m %~]% $ '
+#	PROMPT='%B%F{005faf}[%n@%m %~]% $%f%b ' # celeste
+	PROMPT='%B%F{orange}[%n@%m %~]% $%f%b ' # naranja
 else
-	PROMPT='%B%F{red}[%n@%m %~]% #%f%b '
+	PROMPT='%B%F{red}[%n@%m %~]% %f%b '
 fi
+
 
 # AUTO SUGGESTIONS
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
