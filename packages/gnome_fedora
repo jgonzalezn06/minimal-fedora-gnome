@@ -10,3 +10,4 @@ chrome-gnome-shell
 gnome-tweaks
 gnome-extensions-app
 gdm
+dconf-editor
