@@ -10,8 +10,8 @@ Lanzadores
   home - ctrl + super h
   desactivar todo
 Navegacion
-  cambiar al area de trabajo (1-4) - ctrl +(f1-f4) 
-  mover la ventana al area de trabajo (1-4) - ctrl + shift (f1-f4)
+  cambiar al area de trabajo (1-4) - ctrl +(1-4) 
+  mover la ventana al area de trabajo (1-4) - ctrl + shift (1-4) # si da problemas el 4 configurarlo con dconf-editor /org/gnome/desktop/wm/keybinds/move
   mover la ventana a una pantalla a la derecha - shift + super + derecha
   mover la ventana a una pantalla a la izquierda - shift + super + izquierda
 
