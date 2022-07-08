@@ -1,10 +1,10 @@
 mesa-utils
 mesa-vulkan-drivers
-sa-va-drivers
+mesa-va-drivers
 mesa-vdpau-drivers
 filezilla
 pgadmin4-desktop
-cherrytree-future
+cherrytree
 chromium
 firefox
 virt-viewer
@@ -26,4 +26,4 @@ telnet
 htop
 zsh
 unzip
-crontabs
+cron
