@@ -33,18 +33,18 @@ unzip RobotoMono.zip -d /usr/share/fonts/RobotoMono && rm -rf RobotoMono.zip && 
 
 #USER
 read -p "ingresa el nombre de usuario: " USERNAME
-if [ $USERNAME -eq $(ls /home | grep "$USERNAME") ] ; then
+if [ $(ls /home | grep $USERNAME) = $USERNAME ] ; then
    echo "si existe el usuario"
    usermod $USERNAME -s /usr/bin/zsh
    usermod root -s /usr/bin/zsh
-   git clone https://github.com/zsh-users/zsh-autosuggestions /home/"$USERNAME"/.zsh/zsh-autosuggestions
+   git clone https://github.com/zsh-users/zsh-autosuggestions /home/$USERNAME/.zsh/zsh-autosuggestions
    # CONFIG MOVE
-   mkdir -p /home/"$USERNAME"/.config/terminator/
-   mv config/terminator.config /home/"$USERNAME"/.config/terminator/config
-   mv config/.zshrc /home/"$USERNAME"/.zshrc
+   mkdir -p /home/$USERNAME/.config/terminator/
+   mv config/terminator.config /home/$USERNAME/.config/terminator/config
+   mv config/.zshrc /home/$USERNAME/.zshrc
    ln -s /home/$USERNAME/.zshrc /root/.zshrc
    ln -s /home/$USERNAME/.zsh /root/.zsh
-   chown -R "$USERNAME": /home/"$USERNAME"
+   chown -R $USERNAME: /home/$USERNAME
    usermod -aG wheel $USERNAME
 fi
    
