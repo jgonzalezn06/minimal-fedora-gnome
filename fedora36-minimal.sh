@@ -17,6 +17,9 @@ REMOVE="nano yum"
 dnf remove -y ${REMOVE}
 mv *.repo /etc/yum.repos.d
 dnf install -y fedora-workstation-repositories https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm && dnf clean all && dnf makecache
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
+dnf update --refresh
 
 #PACKAGES GROUPS AND INSTALL
 
@@ -38,8 +41,10 @@ if [ $(ls /home | grep $USERNAME) = $USERNAME ] ; then
    usermod $USERNAME -s /usr/bin/zsh
    usermod root -s /usr/bin/zsh
    git clone https://github.com/zsh-users/zsh-autosuggestions /home/$USERNAME/.zsh/zsh-autosuggestions
+   git clone https://github.com/vinceliuice/Colloid-gtk-theme.git
    # CONFIG MOVE
    mkdir -p /home/$USERNAME/.config/terminator/
+   mv Colloid-gtk-theme /home/$USERNAME/
    mv config/terminator.config /home/$USERNAME/.config/terminator/config
    mv config/.zshrc /home/$USERNAME/.zshrc
    ln -s /home/$USERNAME/.zshrc /root/.zshrc
@@ -47,6 +52,5 @@ if [ $(ls /home | grep $USERNAME) = $USERNAME ] ; then
    chown -R $USERNAME: /home/$USERNAME
    usermod -aG wheel $USERNAME
 fi
-   
    
 
