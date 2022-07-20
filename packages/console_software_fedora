@@ -12,3 +12,4 @@ zsh
 unzip
 crontabs
 dnf-plugins-core
+openconnect
