@@ -27,7 +27,7 @@ dnf install -y $(cat packages/*_fedora)
 systemctl set-default graphical.target
 systemctl enable crond
 systemctl enable libvirtd
-mv config/ssh-key.conf /etc/ssh/ssh_config.d
+mv config/ssh-keys.conf /etc/ssh/ssh_config.d
 
 # Font Install RobotoMono y HacknerdFont
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/RobotoMono.zip && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
