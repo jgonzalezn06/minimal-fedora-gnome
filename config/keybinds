@@ -1,0 +1,18 @@
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Control>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Control>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Control>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Control>4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Control>5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Control>6']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Control>7']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Control>8']"
+
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Control>exclam']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Control>at']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Control>numbersign']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Control>dollar']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Control>percent']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Control>asciicircum']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Control>ampersand']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Control>asterisk']"
