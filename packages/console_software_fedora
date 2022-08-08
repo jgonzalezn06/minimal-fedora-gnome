@@ -1,6 +1,5 @@
 fping
 git
-openfortivpn
 curl
 squid
 wget
@@ -12,4 +11,6 @@ zsh
 unzip
 crontabs
 dnf-plugins-core
+bind-utils
+openfortivpn
 openconnect
